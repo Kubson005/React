@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import ToDo from "./ToDo"
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const texty = [
+{
+  id:0,
+  text: 'Tekscik'
+},
+{
+  id:1,
+  text: 'Fajny text'
+},
+{
+  id:2,
+  text: 'Mega fajny tekst'
+}
+]
+
+function App() {
+const owca= texty.map(el => <ToDo key={el.id} text={el.text} />)
+
+return (
+  <div className="App">
+    {owca}
+  </div>
+)
 }
 
-export default App;
+export default App
